@@ -23,6 +23,8 @@ RUN adduser -D -h /home/${USER} -s /bin/ash ${USER}
 
 # False KICS positive in the following command triggering `Unpinned Package Version in Apk Add`
 # We use >= as a workarround for revision but the packages are pinned and maintained by renovate
+# False positive in HADOLINT, the version is pinned
+# hadolint ignore=DL3018
 # kics-scan ignore-line
 RUN apk update && apk add --no-cache \
     git>=${GIT_VER} \
@@ -32,7 +34,7 @@ RUN apk update && apk add --no-cache \
     alpine-sdk>=${ALPINESDK_VER} \
     sudo>=${SUDO_VER}
 
-RUN echo "${USER} ALL=(ALL) NOPASSWD:/usr/bin/nvim" > /etc/sudoers.d/${USER} && \
+RUN echo "${USER} ALL=(ALL) NOPASSWD:/usr/bin/nvim" | tee /etc/sudoers.d/${USER} && \
     git clone https://github.com/LazyVim/starter /root/.config/nvim && \
     nvim +q
 

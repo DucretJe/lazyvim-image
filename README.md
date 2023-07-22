@@ -1,9 +1,9 @@
-# Repository template
+# Lazyvim docker image
 
-## Features
+This image contains [Lazyvim](https://www.lazyvim.org/).
 
-The repository is spawned with
+## How to
 
-* Renovate config file
-* Super Linter that runs on every push
-* Checkov that runs on PR or push on Main when in /terraform or workflow file
+```sh
+docker run --rm -it -v `pwd`:/workdir -w /workdir ghcr.io/ducretje/base-image:latest
+```
