@@ -1,14 +1,39 @@
-FROM alpine:edge
+FROM alpine:edge@sha256:2d01a16bab53a8405876cec4c27235d47455a7b72b75334c614f2fb0968b3f90
+
+ARG USER=nvim
 
 # Mention Lazyvim version in order for the build to be triggered when bumped
-LAZYVIM_VER v6.1.0
+ENV LAZYVIM_VER v6.1.0
 
-RUN apk add git lazygit neovim ripgrep alpine-sdk --update && \
-    git clone https://github.com/LazyVim/starter ~/.config/nvim
-    cd ~/.config/nvim
+# Repology
+# renovate: datasource=repology depName=alpine_edge/alpine-sdk versioning=loose
+ENV ALPINESDK_VER 1.0
+# renovate: datasource=repology depName=alpine_edge/lazygit versioning=loose
+ENV LAZYGIT_VER 0.39.1
+# renovate: datasource=repology depName=alpine_edge/git versioning=loose
+ENV GIT_VER 2.41.0
+# renovate: datasource=repology depName=alpine_edge/neovim versioning=loose
+ENV NEOVIM_VER 0.9.1
+# renovate: datasource=repology depName=alpine_edge/ripgrep versioning=loose
+ENV RIPGREP_VER 13.0.0
+# renovate: datasource=repology depName=alpine_edge/sudo versioning=loose
+ENV SUDO_VER 1.9.14
+
+RUN adduser -D -h /home/${USER} -s /bin/ash ${USER}
+
+RUN apk add --update \
+    git>=${GIT_VER} \
+    lazygit>=${LAZYGIT_VER} \
+    neovim>=${NEOVIM_VER} \
+    ripgrep>=${RIPGREP_VER} \
+    alpine-sdk>=${ALPINESDK_VER} \
+    sudo>=${SUDO_VER} && \
+    echo "${USER} ALL=(ALL) NOPASSWD:/usr/bin/nvim" > /etc/sudoers.d/${USER} && \
+    git clone https://github.com/LazyVim/starter /root/.config/nvim && \
     nvim +q
+
+USER ${USER}
 
 HEALTHCHECK NONE
 
-ENTRYPOINT ["nvim"]
-
+ENTRYPOINT ["/usr/bin/sudo", "/usr/bin/nvim"]

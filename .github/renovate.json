@@ -25,6 +25,15 @@
       ],
       "depNameTemplate": "LazyVim/LazyVim",
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": [
+        "^docker/.*Dockerfile$"
+      ],
+      "matchStrings": [
+        "#*renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?) versioning=(?<versioning>.*?)\nENV .*_VER (?<currentValue>.*?)\n"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
     }
  ],
   "automerge": true,
