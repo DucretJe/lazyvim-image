@@ -26,6 +26,7 @@ RUN adduser -D -h /home/${USER} -s /bin/ash ${USER}
 # False positive in HADOLINT, the version is pinned
 # hadolint ignore=DL3018
 # kics-scan ignore-line
+# shellcheck disable=SC2261
 RUN apk update && apk add --no-cache \
     git>=${GIT_VER} \
     lazygit>=${LAZYGIT_VER} \
