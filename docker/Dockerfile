@@ -21,14 +21,18 @@ ENV SUDO_VER 1.9.14
 
 RUN adduser -D -h /home/${USER} -s /bin/ash ${USER}
 
-RUN apk add --update \
+# False KICS positive in the following command triggering `Unpinned Package Version in Apk Add`
+# We use >= as a workarround for revision but the packages are pinned and maintained by renovate
+# kics-scan ignore-line
+RUN apk update && apk add --no-cache \
     git>=${GIT_VER} \
     lazygit>=${LAZYGIT_VER} \
     neovim>=${NEOVIM_VER} \
     ripgrep>=${RIPGREP_VER} \
     alpine-sdk>=${ALPINESDK_VER} \
-    sudo>=${SUDO_VER} && \
-    echo "${USER} ALL=(ALL) NOPASSWD:/usr/bin/nvim" > /etc/sudoers.d/${USER} && \
+    sudo>=${SUDO_VER}
+
+RUN echo "${USER} ALL=(ALL) NOPASSWD:/usr/bin/nvim" > /etc/sudoers.d/${USER} && \
     git clone https://github.com/LazyVim/starter /root/.config/nvim && \
     nvim +q
 
