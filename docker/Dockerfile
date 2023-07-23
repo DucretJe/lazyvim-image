@@ -23,10 +23,10 @@ RUN adduser -D -h /home/${USER} -s /bin/ash ${USER}
 
 # False KICS positive in the following command triggering `Unpinned Package Version in Apk Add`
 # We use >= as a workarround for revision but the packages are pinned and maintained by renovate
-# False positive in HADOLINT, the version is pinned
+# False positive in HADOLINT, the version is pinned and redirectionned output
 # hadolint ignore=DL3018
 # kics-scan ignore-line
-# shellcheck disable=SC2261
+# hadolint disable=SC2261
 RUN apk update && apk add --no-cache \
     git>=${GIT_VER} \
     lazygit>=${LAZYGIT_VER} \
