@@ -1,6 +1,7 @@
-# Lazyvim docker image [![💫 Super-Linter](https://github.com/DucretJe/lazyvim-image/actions/workflows/linter.yaml/badge.svg?branch=main)]
-(https://github.com/DucretJe/lazyvim-image/actions/workflows/linter.yaml)
-![image](https://github.com/DucretJe/lazyvim-image/assets/5384298/cf0ea408-eeb4-4e41-a9e8-fa7e7bc5e6b4)
+# Lazyvim docker image [![💫 Super-Linter](https://github.com/DucretJe/lazyvim-image/actions/workflows/linter.yaml/badge.svg?branch=main)](https://github.com/DucretJe/lazyvim-image/actions/workflows/linter.yaml) [![🚀 Build and Push Docker Image](https://github.com/DucretJe/lazyvim-image/actions/workflows/build.yaml/badge.svg?branch=main)](https://github.com/DucretJe/lazyvim-image/actions/workflows/build.yaml)
+
+![image](https://github.com/DucretJe/lazyvim-image/assets/5384298/ea5d6de2-5d62-4d5a-8aac-76a0dea5ffcb)
+
 
 
 This image contains [Lazyvim](https://www.lazyvim.org/).
