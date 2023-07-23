@@ -24,7 +24,7 @@ RUN adduser -D -h /home/${USER} -s /bin/ash ${USER}
 RUN apk update && apk add --no-cache \
     git=${GIT_VER} \
     lazygit=${LAZYGIT_VER} \
-    neovim>${NEOVIM_VER} \
+    neovim=${NEOVIM_VER} \
     ripgrep=${RIPGREP_VER} \
     alpine-sdk=${ALPINESDK_VER} \
     sudo=${SUDO_VER}
