@@ -19,7 +19,6 @@ ENV RIPGREP_VER 13.0.0-r6
 # renovate: datasource=repology depName=alpine_edge/sudo versioning=loose
 ENV SUDO_VER 1.9.14_p2-r0
 
-SHELL ["/bin/sh", "-o", "pipefail", "-c"]
 RUN adduser -D -h /home/${USER} -s /bin/ash ${USER}
 RUN apk update && apk add --no-cache \
     git=${GIT_VER} \
@@ -28,7 +27,7 @@ RUN apk update && apk add --no-cache \
     ripgrep=${RIPGREP_VER} \
     alpine-sdk=${ALPINESDK_VER} \
     sudo=${SUDO_VER}
-
+SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 RUN echo "${USER} ALL=(ALL) NOPASSWD:/usr/bin/nvim" | tee /etc/sudoers.d/${USER} && \
     git clone https://github.com/LazyVim/starter /root/.config/nvim && \
     nvim +q
