@@ -1,4 +1,5 @@
-# Lazyvim docker image
+# Lazyvim docker image [![💫 Super-Linter](https://github.com/DucretJe/lazyvim-image/actions/workflows/linter.yaml/badge.svg?branch=main)]
+(https://github.com/DucretJe/lazyvim-image/actions/workflows/linter.yaml)
 ![image](https://github.com/DucretJe/lazyvim-image/assets/5384298/cf0ea408-eeb4-4e41-a9e8-fa7e7bc5e6b4)
 
 
