@@ -3,7 +3,7 @@ FROM alpine:edge@sha256:2d01a16bab53a8405876cec4c27235d47455a7b72b75334c614f2fb0
 ARG USER=nvim
 
 # Mention Lazyvim version in order for the build to be triggered when bumped
-ENV LAZYVIM_VER v6.1.0
+ENV LAZYVIM_VER v6.2.0
 
 # Repology
 # renovate: datasource=repology depName=alpine_edge/alpine-sdk versioning=loose
