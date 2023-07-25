@@ -9,7 +9,7 @@ ENV LAZYVIM_VER v6.1.0
 # renovate: datasource=repology depName=alpine_edge/alpine-sdk versioning=loose
 ENV ALPINESDK_VER 1.0-r1
 # renovate: datasource=repology depName=alpine_edge/lazygit versioning=loose
-ENV LAZYGIT_VER 0.39.3-r0
+ENV LAZYGIT_VER 0.39.4-r0
 # renovate: datasource=repology depName=alpine_edge/git versioning=loose
 ENV GIT_VER 2.41.0-r2
 # renovate: datasource=repology depName=alpine_edge/neovim versioning=loose
@@ -17,7 +17,7 @@ ENV NEOVIM_VER 0.9.1-r0
 # renovate: datasource=repology depName=alpine_edge/ripgrep versioning=loose
 ENV RIPGREP_VER 13.0.0-r6
 # renovate: datasource=repology depName=alpine_edge/sudo versioning=loose
-ENV SUDO_VER 1.9.14_p2-r0
+ENV SUDO_VER 1.9.14_p3-r0
 
 RUN adduser -D -h /home/${USER} -s /bin/ash ${USER}
 RUN apk update && apk add --no-cache \
