@@ -17,7 +17,7 @@ ENV NEOVIM_VER 0.9.1-r0
 # renovate: datasource=repology depName=alpine_edge/ripgrep versioning=loose
 ENV RIPGREP_VER 13.0.0-r6
 # renovate: datasource=repology depName=alpine_edge/sudo versioning=loose
-ENV SUDO_VER 1.9.14_p2-r0
+ENV SUDO_VER 1.9.14_p3-r0
 
 RUN adduser -D -h /home/${USER} -s /bin/ash ${USER}
 RUN apk update && apk add --no-cache \
