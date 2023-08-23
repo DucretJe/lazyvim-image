@@ -11,7 +11,7 @@ ENV ALPINESDK_VER 1.0-r1
 # renovate: datasource=repology depName=alpine_edge/lazygit versioning=loose
 ENV LAZYGIT_VER 0.40.2-r0
 # renovate: datasource=repology depName=alpine_edge/git versioning=loose
-ENV GIT_VER 2.41.0-r2
+ENV GIT_VER 2.42.0-r0
 # renovate: datasource=repology depName=alpine_edge/neovim versioning=loose
 ENV NEOVIM_VER 0.9.1-r0
 # renovate: datasource=repology depName=alpine_edge/ripgrep versioning=loose
