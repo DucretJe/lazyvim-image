@@ -7,7 +7,7 @@ ENV LAZYVIM_VER v9.6.0
 
 # Repology
 # renovate: datasource=repology depName=alpine_edge/alpine-sdk versioning=loose
-ENV ALPINESDK_VER 1.0-r1
+ENV ALPINESDK_VER 1.1-r0
 # renovate: datasource=repology depName=alpine_edge/lazygit versioning=loose
 ENV LAZYGIT_VER 0.40.2-r1
 # renovate: datasource=repology depName=alpine_edge/git versioning=loose
